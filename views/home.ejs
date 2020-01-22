@@ -1,0 +1,49 @@
+<html>
+    <title>BugTracker</title>
+
+    <script>
+        document.onreadystatechange = () => {
+            if(document.readyState === 'interactive'){
+                document.getElementById('userAgent').value = window.navigator.userAgent
+                document.getElementById('userDate').value = new Date()
+            }
+        }
+    </script>
+
+    <body>
+        <h1>Ferramenta para Relatar Bugs</h1>
+        <p>Preencha todos os dados a seguir:</p>
+        <form method="POST" action="">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name"/>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email"/>
+
+            <label for="issueType">Classificação:</label>
+            <select type="text" id="issueType" name="issueType">
+                <option value="">Selecione</option>
+                <option value="CRITICAL">Urgente</option>
+                <option value="FALHA">Falha</option>
+                <option value="ENHACEMENT">Melhoria</option>
+            </select>
+
+            <label for="origin">Origem</label>
+            <input type="text" id="origin" name="origin"/>
+
+            <label for="howToProduce">Como produzir o erro?</label>
+            <input type="text" id="howToProduce" name="howToProduce"/>
+
+            <label for="expectedOutput">A saída esperada?</label>
+            <input type="text" id="expectedOutput" name="expectedOutput"/>
+
+            <label for="receiveOutput">A saída recebida?</label>
+            <input type="text" id="receiveOutput" name="receiveOutput"/>
+
+            <input type="hidden" id="userAgent" name="userAgent"/>
+            <input type="hidden" id="userDate" name="userDate"/>
+
+            <button>Enviar solicitação!</button>
+        </form>
+    </body>
+</html>
